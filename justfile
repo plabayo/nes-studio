@@ -36,7 +36,7 @@ git-push: qa
     git push
 
 shuttle-deploy: qa
-    cargo shuttle deploy
+    cargo shuttle deploy --no-test
 
 shuttle-watch:
     cargo watch -x 'shuttle run' -i 'nes-studio-app,Cargo.lock'
