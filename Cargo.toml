@@ -1,6 +1,6 @@
 [workspace]
 members = [
+  "nes-studio-app",
   "nes-studio",
-  "nes-studio-website",
 ]
 resolver = "2"

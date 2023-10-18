@@ -2194,24 +2194,24 @@ dependencies = [
 name = "nes-studio"
 version = "0.1.0"
 dependencies = [
- "eframe",
- "egui",
- "env_logger",
- "log",
- "serde",
- "wasm-bindgen-futures",
-]
-
-[[package]]
-name = "nes-studio-website"
-version = "0.1.0"
-dependencies = [
  "axum",
  "shuttle-axum",
  "shuttle-runtime",
  "tokio",
  "tower",
  "tower-http",
+]
+
+[[package]]
+name = "nes-studio-app"
+version = "0.1.0"
+dependencies = [
+ "eframe",
+ "egui",
+ "env_logger",
+ "log",
+ "serde",
+ "wasm-bindgen-futures",
 ]
 
 [[package]]
