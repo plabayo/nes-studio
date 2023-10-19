@@ -17,7 +17,7 @@ test-docs:
     cargo test --workspace --doc
 
 trunk-build:
-    cd nes-studio-app && trunk build
+    cd nes-studio-app && trunk build --release
 
 trunk-watch:
     cd nes-studio-app && trunk watch
@@ -36,8 +36,11 @@ fix: fmt clippy-fix
 git-push: qa
     git push
 
-shuttle-deploy: qa
-    cargo shuttle deploy --no-test
+shuttle-deploy name="nes-studio": qa
+    cargo shuttle deploy --name {{name}} --no-test
 
-shuttle-watch:
-    cargo watch -x 'shuttle run' -i 'nes-studio-app,Cargo.lock'
+shuttle-deploy-test:
+    just shuttle-deploy -name "nes-studio-test"
+
+shuttle-watch name="nes-studio":
+    cargo watch -x 'shuttle run --name {{name}}' -i 'nes-studio-app,Cargo.lock'
