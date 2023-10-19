@@ -40,7 +40,7 @@ shuttle-deploy name="nes-studio": qa
     cargo shuttle deploy --name {{name}} --no-test
 
 shuttle-deploy-test:
-    just shuttle-deploy -name "nes-studio-test"
+    just shuttle-deploy "nes-studio-test"
 
 shuttle-watch name="nes-studio":
     cargo watch -x 'shuttle run --name {{name}}' -i 'nes-studio-app,Cargo.lock'
