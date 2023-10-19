@@ -1,5 +1,7 @@
 var cacheName = 'nes-studio-pwa';
 var filesToCache = [
+  './',
+  './index.html',
   './nes-studio-app-{{ NES_STUDIO_HASH }}.js',
   './nes-studio-app-{{ NES_STUDIO_HASH }}_bg.wasm',
 ];
@@ -13,11 +15,18 @@ self.addEventListener('install', function (e) {
   );
 });
 
-/* Serve cached content when offline */
+/* Serve cached content when offline only */
 self.addEventListener('fetch', function (e) {
   e.respondWith(
-    caches.match(e.request).then(function (response) {
-      return response || fetch(e.request);
-    })
+    fetch(e.request)
+      .then((networkResponse) => {
+        return caches.open(currentCache).then((cache) => {
+          cache.put(e.request, networkResponse.clone());
+          return networkResponse;
+        })
+      })
+      .catch(() => {
+        return caches.match(e.request);
+      })
   );
 });
