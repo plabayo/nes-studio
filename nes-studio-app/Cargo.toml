@@ -28,7 +28,15 @@ wasm-bindgen-futures = "0.4"
 
 
 [profile.release]
-opt-level = 2 # fast and small wasm
+# Do not perform backtrace for panic on release builds.
+panic = 'abort'
+# Perform optimizations on all codegen units.
+codegen-units = 1
+# Optimize for size.
+opt-level = 's' # or 'z' to optimize "aggressively" for size
+# Enable link time optimization.
+lto = true
+
 
 # Optimize all dependencies even in debug builds:
 [profile.dev.package."*"]
