@@ -74,6 +74,9 @@ impl eframe::App for TemplateApp {
             });
 
             ui.add(egui::Slider::new(&mut self.value, 0.0..=10.0).text("value"));
+            if ui.button("Decrement").clicked() {
+                self.value -= 1.0;
+            }
             if ui.button("Increment").clicked() {
                 self.value += 1.0;
             }
@@ -81,7 +84,7 @@ impl eframe::App for TemplateApp {
             ui.separator();
 
             ui.add(egui::github_link_file!(
-                "https://github.com/plabayo/nes_studio/blob/main/",
+                "https://github.com/plabayo/nes-studio/blob/main/",
                 "Source code."
             ));
 
