@@ -23,6 +23,7 @@ trunk-watch:
     cd nes-studio-app && trunk watch
 
 qa: check check-wasm32 check-fmt clippy test test-docs trunk-build
+    scripts/prepare_dist_sw_js.py
 
 fmt:
     cargo fmt --all
