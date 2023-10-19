@@ -2,8 +2,8 @@ var cacheName = 'nes-studio-pwa';
 var filesToCache = [
   './',
   './index.html',
-  './nes-studio-app-65588833e61a5a5c.js',
-  './nes-studio-app-65588833e61a5a5c_bg.wasm',
+  './nes-studio-app-450e4289882092c9.js',
+  './nes-studio-app-450e4289882092c9_bg.wasm',
 ];
 
 /* Start the service worker and cache all of the app's content */
