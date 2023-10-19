@@ -1,7 +1,5 @@
 var cacheName = 'nes-studio-pwa';
 var filesToCache = [
-  './',
-  './index.html',
   './nes-studio-app-7076cb0fa203fd56.js',
   './nes-studio-app-7076cb0fa203fd56_bg.wasm',
 ];
