@@ -5,7 +5,7 @@ edition = "2021"
 
 [dependencies]
 axum = "0.6"
-shuttle-axum = "0.29"
+shuttle-axum = "0.33"
 shuttle-runtime = "0.29"
 tokio = "1.28"
 tower = { version = "0.4", features = ["tracing"] }
